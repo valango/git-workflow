@@ -62,12 +62,13 @@ Role: _implementor_. Finally, you've got the _manager's_ blessing.
 1. `git checkout develop && git pull --rebase` -- make sure your copy is up-to-date;
 1. `git checkout <my-ticket>`   -- do not forget this! ;)
 1. `git tag -a done#<N>`  -- by this tag you'll know later what was sent and when;
-1. `git checkout <my-ticket>-tmp` -- create a temporary branch for compressed commits;
 1. `git rebase -i <branch-root>`  -- interactively leave only the meaningful descriptions;
 1. `git rebase develop` -- make sure the merge will be as clean as possible;
 1. `git merge <my-ticket>-tmp develop`
-1. `git branch -d <my-ticket>-tmp` -- remove the junk;
 1. `git push`  -- update 'develop' branch in central repo.
+
+In case you think you'll need a detailed commit history as it was
+until the step #4, create a separate branch before it.
 
 In bigger projects, the last 3 steps should be done by _manager_, so nobody will update
 the central _`develop`_, while other steps in progress.
