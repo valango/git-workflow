@@ -1,6 +1,6 @@
 # git workflow
 
-How I use [git](https://git-scm.com/) and [gitHub](https://github.com/).
+How I use [git](https://git-scm.com) and [gitHub](https://github.com).
 
 Git is super powerful tool with lots of ways to use it. Like with coding,
 following certain patterns help to avoid lots of troubles here.
@@ -36,7 +36,7 @@ responsibility scope in big projects.
 ### Initializing
 Role: _Manager_.
 1. Create a new directory containing at least .gitignore and README.md file. The README contains
-project title, a short description and status statement, e.g. _"No useful data yet.";
+project title, a short description and status statement, e.g. "No useful data yet.";
 1. `git init && git add -A && git commit -m "Initial commit"`
 1. `git remote add origin https://github.com/{OWNER}/{PROJECT}.git`
 1. `git push -u origin master`
@@ -53,7 +53,7 @@ Role: implementor.
 ### Complete a feature (phase #1)
 Role: _implementor_. Tests run nicely, everything feels fine... but let the others decide.
 1. Send a message to other team members:
-   * I think I'm done with <my-ticket>. Please check it out and let me know -
+   * I think I'm done with \<my-ticket\>. Please check it out and let me know -
    * visit `https://github.com/valango/git-workflow/pull/new/<my-ticket>`
 1. A code review or other form of communication should follow, you may have to redo something.
 
