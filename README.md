@@ -47,7 +47,30 @@ project title, a short description and status statement, e.g. _"No useful data y
 ### Create a personal feature branch
 Role: implementor. 
 1. `git checkout develop && git pull --rebase` -- make sure your copy is up-to-date;
-1. `git checkout -b {my-assigned-ticket}` -- do whatever you like in this branch; commit and push often!
+1. `git checkout -b <my-ticket> && git push --set-upstream origin <my-ticket>` 
+1. Now do whatever you like in this branch, but commit and push often!
+
+### Complete a feature (phase #1)
+Role: _implementor_. Tests run nicely, everything feels fine... but let the others decide.
+1. Send a message to other team members:
+   * I think I'm done with <my-ticket>. Please check it out and let me know -
+   * visit `https://github.com/valango/git-workflow/pull/new/<my-ticket>`
+1. A code review or other form of communication should follow, you may have to redo something.
+
+### Complete a feature (phase #2)
+Role: _implementor_. Finally, you've got the _manager's_ blessing.
+1. `git checkout develop && git pull --rebase` -- make sure your copy is up-to-date;
+1. `git checkout <my-ticket>`   -- do not forget this! ;)
+1. `git tag -a done#<N>`  -- by this tag you'll know later what was sent and when;
+1. `git checkout <my-ticket>-tmp` -- create a temporary branch for compressed commits;
+1. `git rebase -i <branch-root>`  -- interactively leave only the meaningful descriptions;
+1. `git rebase develop` -- make sure the merge will be as clean as possible;
+1. `git merge <my-ticket>-tmp develop`
+1. `git branch -d <my-ticket>-tmp` -- remove the junk;
+1. `git push`  -- update 'develop' branch in central repo.
+
+In bigger projects, the last 3 steps should be done by _manager_, so nobody will update
+the central _`develop`_, while other steps in progress.
 
 ## References
 1. [Git: official reference](https://git-scm.com/docs/)
