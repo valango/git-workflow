@@ -34,17 +34,15 @@ responsibility scope in big projects.
 ## Workflows
 
 ### Initializing
-1. A new directory containing at least .gitignore and README.md file, is created. The README contains
+1. Create new directory containing at least .gitignore and README.md file. The README contains
 project title, a short description and status statement, e.g. _"No useful data yet."_
-1. The _`develop`_ branch is created, and both are synched with the central repository.
-```
-   git init
-   git add -A && git commit -m "Initial commit"
-   git remote add origin https://github.com/{OWNER}/{PROJECT}.git
-   git push -u origin master
-   git checkout -b develop
-```
-
+   * `git init`
+   * `git add -A && git commit -m "Initial commit"`
+   * `git remote add origin https://github.com/{OWNER}/{PROJECT}.git`
+   * `git push -u origin master`
+1. Create _`develop`_ branch and both are sync it with the central repository.
+   * `git checkout -b develop && git push --set-upstream origin develop`
+1. It is often a good idea to make the _`develop`_ a default branch of the central repository.
 
 ## References
    1. [Git: official reference](https://git-scm.com/docs/)
